@@ -1,0 +1,89 @@
+@import "../common files/mixinFiles";
+
+@mixin blog-card{
+    display: flex;
+    .single-blog-card{
+        display: flex;
+        width: 50%;
+        padding: 2%;
+    }   
+}
+
+.category-container{
+    background-color: whitesmoke;
+    margin: 5% 3%;
+    border-radius: 1%;
+
+    .category-heading{
+        display: flex;
+        padding: 1% 2% 0% 2%;
+        border-bottom: 2px solid orangered;
+
+        .left-side-category-name{
+            width: 85%;
+
+            & h5{
+                font-size: 2.2vw;
+            }
+        }
+
+        .right-side-view-all{
+            width: 15%;
+
+            & h5{
+                text-align: right;
+                font-size: 2.2vw;
+
+                &:hover{
+                    color: brown;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .blogs-category-container-card{
+        // display: flex;
+        padding: 0% 1%;
+
+        .blogs-desktop{
+            display: none;
+
+            @media(min-width: 769px) {
+                display: flex;
+                @include blog-card;
+            }           
+        } 
+        
+        .blogs-tablet{
+            display: none;
+
+            @media (min-width: 601px) and (max-width: 767px) {
+                display: flex;
+                @include blog-card;
+            }
+        }
+
+        .blogs-mobile{
+            @media(min-width: 601px){
+                display: none;
+            }
+            .mobile-row{
+                @include blog-card;
+            }
+        }
+
+        .no-display-post{
+            @include centre-div;
+            width: 100%;
+            height: 100px;
+
+            & h6{
+                font-size: 2vw;
+                word-spacing: 10px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+    
+}

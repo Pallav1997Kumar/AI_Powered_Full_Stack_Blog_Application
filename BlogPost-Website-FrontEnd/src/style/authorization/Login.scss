@@ -1,0 +1,75 @@
+@import "../common files/variables";
+@import "../common files/mixinFiles";
+@import "leftComponent";
+@import "rightComponent";
+
+.login{
+    padding: 2%;
+    display: flex;
+    background-color: aquamarine;
+    @media(max-width: 600px){
+        flex-direction: column;
+    }
+
+    .login-left-side{
+        width: 60%;
+        @media(max-width: 768px){
+            width: 50%;
+        }
+        @media(max-width: 600px){
+            width: 100%;
+            margin-bottom: 5%;
+        }
+        @include leftComponent;
+    }
+
+    .login-right-side{
+        width: 40%;
+        @media(max-width: 768px){
+            width: 50%;
+        }
+        @media(max-width: 600px){
+            width: 100%;
+        }
+        @include right-component-login-register;
+
+        .login-mandatory-text{
+            & p{
+                color: blueviolet;
+                font-size: 1.5vw;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+        }
+
+        .text{
+            font-size: 2vw;
+            padding: 0px;
+            text-align: center;
+            font-style: italic;
+            color: blueviolet;
+        }
+
+        .value{
+            @include valid-input-box;
+        }
+        
+        .value-invalid{
+            @include invalid-input-box;
+        }
+
+        .login-button{
+            @include centre-div;
+        }
+
+        .error-message{
+            color: $error-message-color;
+            width: 70%;
+            padding: 1%;
+            text-align: center;
+        }
+
+        .text-not-account{
+            @include login-register-link;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.single-post{
+    display: flex;
+    width: 100%;
+    @media(max-width: 600px){
+        flex-direction: column;
+    }
+
+    .post-section{
+        width: 65%;
+        padding-right: 2%;
+        @media(max-width: 600px){
+            width: 100%;
+        }
+    }
+
+    .comment-section{
+        width: 35%;
+        border-left: 2.5px solid red;
+        background-color: darkgoldenrod;
+        @media(max-width: 600px){
+            width: 100%;
+        }
+    }
+}
+
+
+.loading-post {
+	width: 100%;
+	height: 50vh; 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2vw;
+	color: gray;
+	font-weight: 500;
+	text-align: center;
+
+	@media (max-width: 768px) {
+		font-size: 2.6vw;
+		height: 40vh;
+	}
+}

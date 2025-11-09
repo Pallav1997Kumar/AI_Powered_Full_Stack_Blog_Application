@@ -1,0 +1,42 @@
+@import "../common files/mixinFiles";
+
+.footer{
+    background-color: rgba(0, 0, 0, 0.76);
+    width: 100%;
+
+    & h1{
+        font-size: 40px;
+        color:beige;
+        margin-top: 0px;
+        padding-top: 25px;
+        text-align: center;
+    }
+
+    & h3{
+        color: bisque;
+        font-size: 30px;
+        margin: 2% 0% 0% 0%;
+        text-align: center;
+    }
+    
+    & h4{
+        font-size: 25px;
+        text-align: center;
+        color: #d8cdcd;
+        padding-bottom: 20px;
+        padding-right: 0px;;
+        margin-bottom: 0px;
+    }
+
+    .footer-social{
+        text-align: center;
+        @include centre-div;
+
+        .footer-social-name{
+            text-decoration: none;
+            color: azure;
+            font-size: 18px;
+            padding: 2%;
+        }
+    }
+}

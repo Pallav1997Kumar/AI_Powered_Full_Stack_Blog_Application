@@ -1,0 +1,62 @@
+@mixin video-container{
+    width: 80%;
+    height: 28vw;
+    @media(max-width: 768px){
+        width: 95%;
+        height: 40vw;
+    }   
+}
+
+@mixin text-container{
+    width: 50%;
+    @media(max-width: 600px){
+        width: 100%;
+    }
+}
+
+@mixin font($desktop-font, $tablet-font, $fontFamily){
+    font-size: $desktop-font;
+    font-family: $fontFamily;
+    @media(max-width: 768px){
+        font-size: $tablet-font;
+    }
+}
+
+.blog-defination-and-video{
+    display: flex;
+    padding: 3%;
+    width: 100%;
+    @media(max-width: 600px){
+        flex-direction: column;
+    }
+
+    .blog-video{
+        @include text-container;
+        & video{
+            @include video-container;
+        }
+        & iframe{
+            @include video-container;
+        }
+    }
+
+    .blog-defination{
+        @include text-container;
+
+        & h3{
+            @include font(2.5vw, 3vw, sans-serif);
+            transition: font-size 1s;
+            &:hover{
+                @include font(2.8vw, 3.3vw, sans-serif);
+            }    
+        }
+
+        & h5{
+            @include font(1.8vw, 2.15vw, sans-serif);
+        }
+
+        & p{
+            @include font(1.2vw, 1.5vw, cursive);
+        }
+    }
+}

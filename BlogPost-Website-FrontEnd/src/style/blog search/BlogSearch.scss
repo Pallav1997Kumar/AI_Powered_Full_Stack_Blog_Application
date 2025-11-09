@@ -1,0 +1,40 @@
+@import "../common files/mixinFiles";
+
+.blog-search-container{
+    background-color: rgb(195, 212, 226);
+    padding: 4%;
+
+    .search-box{
+        @include centre-div;
+
+        & input{
+            width: 87%;
+            padding: 1.2%;
+            font-size: 1.5vw;
+        }
+
+        & svg{
+            padding: 0.8%;
+            height: 5vw;
+            width: 5vw;
+        }
+    }
+
+    .search-result{
+        background-color: white;
+        margin-left: 3.8%;
+        margin-right: 9.5%;
+
+        & h6{
+            font-size: 1.5vw;
+            padding: 0.5% 1.5%;
+
+            &:hover{
+                cursor: pointer;
+                background-color: rgb(233, 230, 230);
+            }
+        }
+    }
+}
+
+

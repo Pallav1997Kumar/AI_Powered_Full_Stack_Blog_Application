@@ -1,0 +1,16 @@
+@import "../common files/mixinFiles";
+
+.all-blogs-home{
+    padding: 1% 2%;
+
+    .search-post{
+        background-color: lightgreen;
+        @include centre-div;
+        padding: 2%;
+
+        & h5{
+            padding: 0% 2%;
+            font-size: 1.8vw;
+        }
+    }
+}

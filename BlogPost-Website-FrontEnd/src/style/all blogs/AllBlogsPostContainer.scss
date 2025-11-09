@@ -1,0 +1,138 @@
+@import "../common files/mixinFiles";
+
+@mixin post-user-info{
+    font-weight: bold;
+    color: black;
+    width: 50%;
+    font-size: 1.3vw;
+    @media(max-width: 768px){
+        font-size: 1.5vw;
+    }
+}
+
+@mixin click{
+    text-decoration: none;
+    color: black;
+    transition: color 1s;
+    &:hover{
+        color: rgb(100, 26, 26);
+        cursor: pointer;
+    }
+}
+
+.post-container{
+    display: flex;
+    padding: 3% 2% 0% 2%;
+    margin: 2%;
+    background-color: rgb(224, 224, 198);
+    margin-bottom: 1.2%;
+    transition: background-color 1.5s, margin 1.5s;
+    @media(max-width: 600px){
+        flex-direction: column;
+    }
+
+    .post-desc{
+        padding: 3%;
+        width: 70%;
+        @media(max-width: 768px){
+            width: 65%;
+        }
+        @media(max-width: 600px){
+            width: 100%;
+        }
+
+        .heading-title{
+            text-decoration: none;
+            color: black;
+
+            & h1{
+                font-size: 3vw;
+                margin-bottom: 5px;
+                transition: color 1.5s, font-size 1s, font-weight 1s;
+                @media(max-width: 768px){
+                    font-size: 3.5vw;
+                }
+
+                &:hover{
+                    color: red;
+                    font-size: 3.1vw;
+                    font-weight: 700;
+                    @media(max-width: 768px){
+                        font-size: 3.65vw;
+                    }
+                }
+            }
+        }
+
+        .username-posttime{
+            display: flex;
+
+            .user-name{
+                @include post-user-info;
+
+                .user-click{
+                    @include click;
+                }
+            }
+            
+            .post-time{
+                @include post-user-info;
+                text-align: right;
+                padding-right: 8%;
+            }
+            
+        }
+
+        .category-name{
+            @include post-user-info;
+
+            .category-click{
+                @include click;
+            }
+        }
+
+        .post-description{
+            & p{
+                font-size: 1.2vw;
+                padding-top: 1%;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                @media(max-width: 768px){
+                    font-size: 1.5vw;
+                }
+            }
+        }
+    }
+
+    .post-image{
+        @include centre-div;
+        padding-top: 3%;
+        width: 30%;
+        @media(max-width: 768px){
+            width: 35%;
+            padding-top: 8%;
+        }
+        @media(max-width: 600px){
+            width: 100%;
+            padding-top: 0%;
+        }
+
+        & img{
+            height: 25vw;
+            width: 29vw;
+            padding-top: 10%;
+            @media(max-width: 768px){
+                height: 34vw;
+                width: 34vw;
+            }
+            @media(max-width: 600px){
+                padding-top: 0%;
+                width: 50vw;
+            }
+        }
+    }
+
+    &:hover{
+        margin: 1%;
+        background-color: rgb(218, 218, 208);
+    }
+}

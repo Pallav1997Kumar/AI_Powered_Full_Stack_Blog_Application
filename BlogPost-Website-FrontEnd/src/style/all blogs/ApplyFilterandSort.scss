@@ -1,0 +1,138 @@
+@import "../common files/mixinFiles";
+
+.accordion_heading{
+    width: 100%;
+    height: 100%;
+    padding: 1% 2%;
+    background-color: lightseagreen;
+
+    & h4{
+        font-size: 2vw;
+        font-family: Arial;
+        color: darkblue;
+    }
+}
+
+.sort-filter{
+    display: flex;
+    background-color: lightgoldenrodyellow;
+    @media(max-width: 600px){
+        flex-direction: column;
+    }
+
+    .sort-apply{
+        padding: 2%;
+        width: 33%;
+        @media(max-width: 768px){
+            width: 23%;
+        }
+        @media(max-width: 600px){
+            width: 100%;
+        }
+
+        & h5{
+            font-size: 1.6vw;
+            @media(max-width: 768px){
+                font-size: 1.8vw;
+            }
+        }
+        
+        & select{
+            width: 15vw;
+            border: 2px solid blueviolet;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.25vw;
+            font-weight: 800;
+            font-style: oblique;
+            background-color: antiquewhite;
+            color: blue;
+            padding: 0.25%;
+            @media(max-width: 768px){
+                font-size: 1.5vw;
+                width: 18vw;
+            }
+
+            & option{
+                font-size: 1.3vw;
+                @media(max-width: 768px){
+                    font-size: 1.5vw;
+                }
+            }
+        }
+    }
+
+    .filter-apply{
+        padding: 2%;
+        display: flex;
+        width: 67%;
+        @media(max-width: 768px){
+            width: 77%;
+        }
+        @media(max-width: 600px){
+            width: 100%;
+        }
+
+        & input{
+            width: 1vw;
+            height: 1vw;
+            @media(max-width: 768px){
+                width: 1.2vw;
+                height: 1.2vw;
+            }
+        }
+
+        .filter-category{
+            width: 25%;
+            & h5{
+                font-size: 1.6vw;
+                @media(max-width: 768px){
+                    font-size: 1.8vw;
+                }
+            }
+            .category-name{
+                font-size: 1.2vw;
+                @media(max-width: 768px){
+                    font-size: 1.4vw;
+                }
+            }
+        }
+        
+        .filter-author{
+            width: 50%;
+            & h5{
+                font-size: 1.6vw;
+                @media(max-width: 768px){
+                    font-size: 1.8vw;
+                }
+            }
+            .author-name{
+                font-size: 1.2vw;
+                @media(max-width: 768px){
+                    font-size: 1.4vw;
+                }
+            }
+        }
+
+        .filter-date{
+            width: 25%;
+            & h5{
+                font-size: 1.6vw;
+                @media(max-width: 768px){
+                    font-size: 1.8vw;
+                }
+            }
+            .date-selection{
+                font-size: 1.2vw;
+                @media(max-width: 768px){
+                    font-size: 1.4vw;
+                }
+            }
+        }
+    }
+}
+
+.button-sort-filter{
+    @include centre-div;
+    padding: 2%;
+    background-color: lightgoldenrodyellow;
+}

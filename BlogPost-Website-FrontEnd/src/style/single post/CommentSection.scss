@@ -1,0 +1,73 @@
+@import "../common files/variables";
+@import "../common files/mixinFiles";
+
+@mixin comment-message($message-color){
+    color: $message-color;
+    @include centre-div-centre-text;
+    padding-top: 3%;
+}
+
+.post-comments{
+    width: 100%;
+    padding-top: 2%;
+
+    .new-comment{
+        border-bottom: 2px solid darkmagenta;
+        padding-bottom: 5%;
+
+        & textarea{
+            width: 92%;
+            margin: 4%;
+            background-color: darkgoldenrod;
+            border: none;
+            resize: none;
+            font-size: 1.1vw;;
+            border-bottom: 2px solid brown;
+
+            &:focus{
+                background-color: darkgoldenrod;
+                outline: none;
+                border-bottom: 2px solid brown;
+            }
+        }
+
+        .comment-post-button{
+            @include centre-div;
+        }
+
+        .comment-error-message{
+            @include comment-message($error-message-color);
+        }
+        
+        .comment-success-message{
+            @include comment-message($success-message-color);
+        }
+    }
+
+    .login-for-comment{
+        border-bottom: 2px solid darkmagenta;
+        padding-bottom: 5%;
+
+        & h5{
+            text-align: center;
+            font-size: 1.8vw;
+        }
+
+        .login-button{
+            @include centre-div;
+            padding: 1%;
+
+            .login-comment{
+                text-decoration: none;
+            }
+        }
+    }
+
+    .previous-comments{
+        & h3{
+            text-align: center;
+            padding-top: 2.5%;
+            font-size: 2vw;
+        }
+    } 
+}

@@ -1,0 +1,102 @@
+@import "../common files/mixinFiles";
+
+.navbar-desktop{
+    background-color: brown;
+    padding: 1.5% 1.5% 0.4% 1.5%;
+    display: flex;
+    width: 100%;
+
+    .navbar-image{
+        float: left;
+        width: 20%;
+        margin-top: 2%;
+
+        & img{
+            height: 4vw;
+            width: 11vw;
+        }
+    }
+
+    .navbar-heading{
+        width: 60%;
+        float: left;
+        display: flex;
+        line-height: 0.2px;
+        margin-top: 2%;
+    }
+
+    .navbar-navlink{
+        padding: 5% 5% 0% 5%;
+        text-decoration: none;
+        font-size: 2.5vw;
+        font-weight: bold;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: rgb(224, 209, 189);
+        transition: color 1.25s;
+
+        &:hover{
+            color: lightseagreen;
+        }
+
+        &.active{
+            color: rgb(228, 231, 19);
+            padding-bottom: 2%;
+            border-bottom: 5px solid rgb(219, 194, 194);
+        }
+    }
+
+    .user{
+        align-items: end;
+        justify-content: end;
+        width: 20%;
+        display: flex;
+
+        & button{
+            padding: 8% 15% 0% 15%;
+        }
+
+        .logged-user-dropdown{
+            display: flex;
+            .div-image{
+                & img{
+                    height: 3vw;
+                    width: 3vw;
+                }
+            }
+            .user-info{
+                font-size: 1.3vw;
+            }
+        }
+        
+    }
+
+    .login-register{
+        @include centre-div;
+        width: 20%;
+
+        .login-register-menu{
+            padding: 0% 10%;
+            display: flex;
+
+            .login-register-button{
+                font-size: 1.7vw;
+                text-decoration: none;
+                font-family: sans-serif;
+                text-transform: uppercase;
+                color: blanchedalmond;
+                font-weight: bolder;
+            }
+
+            & Button{
+                text-decoration: none;
+                padding: 8% 10%;
+                background-color: rgb(223, 185, 20);
+                transition: background-color 1.75s;
+
+                &:hover{
+                    background-color: lightgreen;
+                }
+            }
+        }
+    }
+}

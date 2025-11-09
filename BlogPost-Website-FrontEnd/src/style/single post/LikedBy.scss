@@ -1,0 +1,16 @@
+.each-user-like{
+    display: flex;
+    padding: 2%;
+
+    .like-image{
+        & img{
+            height: 40px;
+            width: 40px;
+        }
+    }
+
+    .like-user-name{
+        padding-left: 3%;
+        padding-top: 1%;
+    }
+}

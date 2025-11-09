@@ -1,0 +1,40 @@
+@import "../common files/mixinFiles";
+
+@mixin leftComponent{
+    padding: 2%;
+    @include centre-div;
+    background-image: url("https://images.pexels.com/photos/733856/pexels-photo-733856.jpeg?cs=srgb&dl=pexels-tirachard-kumtanom-733856.jpg&fm=jpg");
+    background-size: cover; 
+    margin: 1%;
+
+    & h1{
+        color: rgb(2, 117, 2);
+        font-size: 3.5vw;
+        font-style: italic;
+        font-weight: bolder;
+        @media(max-width: 768px){
+            font-size: 5vw;
+        }
+
+        & span{
+            color: rgb(3, 49, 3);
+            font-size: 4vw;
+            font-weight: bolder;
+            @media(max-width: 768px){
+                font-size: 5.7vw;
+            }
+        }
+    }
+
+    & p{
+        color: rgb(0, 0, 133);
+        font-family:Arial, Helvetica, sans-serif;
+        font-size: 1.5vw;
+        font-style: italic;
+        font-weight: bold;
+        margin-bottom: 1%;
+        @media(max-width: 768px){
+            font-size: 2.2vw;
+        }
+    }
+}

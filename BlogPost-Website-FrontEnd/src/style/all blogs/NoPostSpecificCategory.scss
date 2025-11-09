@@ -1,0 +1,23 @@
+@import "../common files/mixinFiles";
+
+.no-post{
+    width: 100%;
+    min-height: 350px;
+
+    .no-post-heading{
+        text-align: center;
+        padding: 5%; 
+
+        .category-name-nopost{
+            font-weight: 700;
+        }
+    }
+
+    .no-post-buttons{
+        @include centre-div-padding(3% 15% 5% 15%);
+
+        .no-post-button{
+            margin: 0% 5%;
+        }
+    }
+}

@@ -1,0 +1,157 @@
+@import "../common files/variables";
+@import "../common files/mixinFiles";
+
+
+@mixin comment-message($message-color){
+    color: $message-color;
+    @include centre-div-centre-text;
+    padding-top: 3%;
+}
+
+.single-comment{
+    padding: 2% 0.5%;
+
+    .comment-name-image-time{
+        display: flex;
+        padding: 2% 0% 0% 2%;
+
+        .comment-image{
+            padding: 0% 2% 0% 2%;
+            width: 10%;
+            @media(max-width: 600px){
+                width: 2.5%;
+            }
+
+            & img{
+                width: 2.5vw;
+                height: 2.5vw;
+            }
+        }
+
+        .comment-username{
+            width: 60%;
+            padding-left: 2%;
+            @media(max-width: 900px){
+                padding-top: 1%;
+            }
+            @media(max-width: 768px){
+                padding-top: 2%;
+            }
+            @media(max-width: 655px){
+                padding-top: 3%;
+            }
+            @media(max-width: 600px){
+                padding-top: 1.5%;
+            }
+            & h6{
+                margin-top: 2%;
+                font-size: 1.2vw;
+                @media(max-width: 600px){
+                    margin-top: 0.5%;
+                }
+            }
+        }
+
+        .comment-time{
+            width: 30%;
+            text-align: right;
+
+            & p{
+                font-size: 1.1vw;
+                margin-bottom: 0px;
+                margin-top: 2%;
+                padding-right: 10%;
+            }
+        }
+    }
+
+    .comment-description{
+        padding-left: 12%;
+        @media(max-width: 600px){
+            padding-left: 8%;
+        }
+
+        & p{
+            font-size: 1.1vw;
+            margin-bottom: 0px;
+        }
+    }
+
+    .edit-delete-comment{
+        display: flex;
+
+        .edit-comment{
+            width: 50%;
+            display: flex;
+            justify-content: left;
+            align-items: start;
+            padding-left: 6%;
+            color: rgb(11, 11, 211);
+
+            & p{
+                font-size: 1.2vw;
+                &:hover{
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .delete-comment{
+            width: 50%;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            padding-right: 6%;
+            color: rgb(11, 11, 211);
+
+            & p{
+                font-size: 1.2vw;
+                &:hover{
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.edit-comment-container{
+    & h6{
+        font-size: 1.35vw;
+    }
+
+    .edit-new-comment{
+        border-bottom: 2px solid darkmagenta;
+        padding-bottom: 5%;
+    
+        & textarea{
+            width: 92%;
+            margin: 4%;
+            font-size: 1.1vw;
+            background-color: darkgoldenrod;
+            border: none;
+            resize: none;
+            border-bottom: 2px solid brown;
+    
+            &:focus{
+                background-color: darkgoldenrod;
+                outline: none;
+                border-bottom: 2px solid brown;
+            }
+        }
+    
+        .comment-post-button{
+            @include centre-div;
+        }
+    
+        .comment-error-message{
+            @include comment-message($error-message-color);
+        }
+        
+        .comment-success-message{
+            @include comment-message($success-message-color);
+        }
+    }
+    
+}

@@ -1,0 +1,85 @@
+.contact{
+    padding: 2%;
+
+    .contact-one-row{
+        display: flex;
+        font-size: larger;
+        @media(max-width: 600px){
+            flex-direction: column;
+            padding-bottom: 20%;
+        }
+
+        .contact-one-column-first{
+            padding: 2.5% 4%;
+            width: 70%;
+            @media(max-width: 600px){
+                width: 100%;
+            }
+
+            & p{
+                font-size: 1.8vw;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                @media(max-width: 700px){
+                    font-size: 2.5vw;
+                }
+            }
+        }
+
+        .contact-one-column-second{
+            padding: 1% 4%;
+            width: 30%;
+
+            & img{
+                width:25vw;
+                height: 25vw;
+            }
+        }
+    }
+
+    .contact-two-row{
+        display: flex;
+        @media(max-width: 600px){
+            flex-direction: column;
+        }
+
+        .contact-two-column{
+            padding: 2% 2%;
+            width: 33.33%;
+            @media(max-width: 600px){
+                width: 90%;
+            }
+
+            & h3{
+                font-size: 2vw;
+                @media(max-width: 700px){
+                    font-size: 2.75vw;
+                }
+                @media(max-width: 550px){
+                    font-size: 4vw;
+                }
+            }
+
+            & p{
+                font-size: 1.5vw;
+                @media(max-width: 700px){
+                    font-size: 1.9vw;
+                }
+                @media(max-width: 550px){
+                    font-size: 3vw;
+                }
+            }
+
+            .contact-link{
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 1.5vw;
+                @media(max-width: 700px){
+                    font-size: 1.9vw;
+                }
+                @media(max-width: 550px){
+                    font-size: 3vw;
+                }
+            }
+        }
+    }
+}

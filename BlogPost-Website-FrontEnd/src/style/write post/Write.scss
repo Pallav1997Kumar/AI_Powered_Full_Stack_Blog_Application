@@ -1,0 +1,5 @@
+@import "../common files/update-write-common";
+
+.write-blog{
+    @include update-write-styles;
+}

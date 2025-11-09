@@ -1,0 +1,25 @@
+@import "../common files/mixinFiles";
+
+.filter-no-post{
+    width: 100%;
+    height: 500px;
+    @include centre-div-column;
+
+    .no-post-heading-filter{
+        & h3{
+            font-family:cursive;
+            font-style: italic;
+            letter-spacing: 3px;
+            word-spacing: 6px;
+        }
+    }
+
+    .no-post-buttons-filter{
+        padding: 2%;
+        display: flex;
+
+        .no-post-button{
+            margin: 3%;
+        }
+    }
+}

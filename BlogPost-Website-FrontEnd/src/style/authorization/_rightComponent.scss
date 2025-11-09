@@ -1,0 +1,63 @@
+@import "../common files/variables";
+@import "../common files/mixinFiles";
+
+
+@mixin right-component-login-register{
+    padding: 2%;
+    border: 3px solid violet;
+    border-radius: 10%;
+    background-color: antiquewhite;
+
+    .heading{
+        font-size: 3vw;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+        color: darkblue;
+    }
+    .line1{
+        padding: 40px 0px 0px 0px;
+    }    
+    .line2{
+        padding: 0px 0px 20px 0px;
+    }
+    .mandatory{
+        color: $mandatory-color;
+    }
+    .agree-text{
+        font-size: 2vw;
+        color: blue;
+        padding-left: 1.5%;
+    }
+}
+
+@mixin right-component-logout-delete{
+    width: 40%;
+    padding: 2%;
+    border: 3px solid violet;
+    border-radius: 10%;
+    background-color: antiquewhite;
+    @include centre-div;
+    flex-direction: column;
+    @media(max-width: 600px){
+        width: 100%;
+        border-radius: 15%;
+    }
+
+    .heading{
+        font-size: 3vw;
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: darkblue;
+        @media(max-width: 600px){
+            padding-top: 15%;
+        }
+    }
+}
+
+@mixin login-register-link{
+    color: blueviolet;
+    @include centre-div;
+    font-size: 1.5vw;
+    flex-direction: column;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

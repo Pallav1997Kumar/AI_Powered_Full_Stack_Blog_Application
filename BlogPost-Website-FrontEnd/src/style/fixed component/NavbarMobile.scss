@@ -1,0 +1,54 @@
+.navbar-mobile{
+    background-color: brown;
+    padding: 1.5% 0% 0.4% 1.5%;
+    display: flex;
+    width: 100%;
+
+    .navbar-image{
+        float: left;
+        width: 50%;
+        margin-top: 2%;
+
+        & img{
+            height: 7vw;
+            width: 20vw;
+        }
+    }
+
+    .navbar-dropdown{
+        width: 50%;
+        justify-content: end;
+        display: flex;
+        align-items: center;
+        padding-right: 5%;
+
+        .logged-in-container{
+            & button{
+                padding: 8% 15% 0% 15%;
+            }
+            .logged-user-dropdown{
+                display: flex;
+                .div-image{
+                    & img{
+                        height: 3vw;
+                        width: 3vw;
+                    }
+                }
+            }
+        } 
+        
+        .not-logged-in-container{
+            & button{
+                padding: 1% 2%;
+            }
+
+            & h4{
+                font-size: 2vw;
+                margin-bottom: 0%;
+                padding: 1%;
+            }
+        }
+
+    }
+
+}

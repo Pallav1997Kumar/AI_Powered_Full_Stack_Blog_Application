@@ -1,0 +1,111 @@
+@import "../common files/mixinFiles";
+
+@mixin home-block($background-color-of-block){
+    background-color: $background-color-of-block;
+    padding-bottom: 2%;
+
+    & h5{
+        text-align: center;
+        color: white;
+        padding-bottom: 0px;
+        margin-bottom: 0.15%;
+        padding-top: 2%;
+        font-size: 2.5vw;
+        margin-top: 0px;
+    }
+    
+    & p{
+        color: whitesmoke;
+        font-size: 1.8vw; 
+        text-align: center;
+    }
+
+    & .button{
+        @include centre-div;
+        & .link{
+            text-decoration: none;
+        }
+    }
+}
+
+.home-page{
+    .top{
+        background-color: green;
+
+        & h1{
+            text-align: center;
+            color: white;
+            padding-top: 2%;
+            font-size: 4.5vw;
+            margin-top: 0px;
+        }
+
+        & h3{
+            text-align: center;
+            color: white;
+            padding-bottom: 2%;
+            font-size: 2.5vw;
+            margin-bottom: 0px;
+        }
+    }
+
+    .flex-container {
+        display: flex;
+        background-color: rgb(255, 94, 0);
+        padding: 2% 5%;
+        @media(max-width: 600px){
+            flex-direction: column;
+        }
+
+        .flex-container-left{
+            width: 60%;
+            @media(max-width: 600px){
+                width: 100%;
+            }
+
+            & h2{
+                color: whitesmoke;
+                font-size: 3vw;
+            }
+
+            & h4{
+                color: rgb(196, 207, 218);
+                padding-right: 1%;
+                font-size: 2.2vw;
+            }
+
+            .flex-container-left-btn{
+                padding-top: 2%;
+                @media(max-width: 600px){
+                    padding-bottom: 6%;
+                }
+
+                & .link{
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .flex-container-right{
+            width: 40%;
+
+            & img{
+                width: 38vw;
+                height: 30vw;
+            }
+        }
+    }
+
+    .blog-home{
+        @include home-block(darkorange);
+    }
+
+    .blog-introduction{
+        @include home-block(orangered);
+    }
+
+    .blog-search{
+        @include home-block(darkorange);
+    }
+    
+}

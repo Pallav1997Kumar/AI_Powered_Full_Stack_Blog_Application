@@ -1,0 +1,89 @@
+@import "../common files/variables";
+@import "../common files/mixinFiles";
+
+
+@mixin styles-flex-full-width{
+    display: flex;
+    width: 100%;
+    padding: 1%;
+}
+
+//Basic class starts
+.mandatory{
+    color: $mandatory-color;
+}
+
+.value-update{
+    @include valid-input-box;
+}
+
+.value-update-invalid{
+    @include invalid-input-box;
+}
+
+.update-btn{
+    padding: 1%;
+    @include centre-div;
+}
+
+.success-error-container{
+    @include centre-div;
+}
+
+.error-update-message{
+    color: $error-message-color;
+}
+
+.success-update-message{
+    color: $success-message-color;
+}
+
+//Basic class ends
+
+.update-image-container{
+    @include centre-div;
+
+    .profile-image{
+        padding: 1%;
+    }
+
+    .image-text{
+        padding: 1%;
+
+        & label{
+            padding-right: 1%;
+        }
+    }
+}
+
+.basic-name-container{
+    @include styles-flex-full-width;
+    .basic-name{
+        width: 33.33%;
+    }
+}
+
+.basic-other-container{
+    @include styles-flex-full-width;
+    .basic-other-gender{
+        width: 50%;
+    }
+}
+
+.email-username-container{
+    @include styles-flex-full-width;
+    .email-username{
+        width: 50%;
+    }
+}
+
+.old-password-container{
+    padding: 1%;
+}
+
+.new-password-container{
+    @include styles-flex-full-width;
+    .new-password{
+        width: 50%;
+    }
+}

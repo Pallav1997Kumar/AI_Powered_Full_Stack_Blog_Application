@@ -1,0 +1,113 @@
+@import "../common files/variables";
+
+.post-details{
+    width: 100%;
+    padding: 3%;
+    padding-right: 5%;
+    padding-left: 5%;
+    @media(max-width: 600px){
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+
+    & img{
+        width: 52.5vw;
+        height: 35vw;
+        @media(max-width: 600px){
+            width: 67vw;
+        }
+    }
+
+    & h1{
+        font-size: 4vw;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    .single-post-head-row{
+        display: flex;
+        margin-bottom: 10%;
+
+        .user-category{
+            width: 50%;
+
+            .user-and-userimage{
+                display: flex;
+
+                .userimage{
+                    & img{
+                        width: 4.25vw;
+                        height: 4.25vw;
+                        display: inline;
+                    }
+                }
+
+                .user-fullname{
+                    & h4{
+                        font-size: 2.2vw;
+                        margin-top: 1vw;
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+
+            & h5{
+                font-size: 1.5vw;
+                margin-top: 1vw;
+                margin-bottom: 1vw;
+            }
+
+            .delete-update{
+                display: flex;
+
+                .delete-update-btn{
+                    width: 50%;
+                }
+            }
+        }
+
+        .time{
+            margin-top: 1.5vw;
+            width: 50%;
+            & h6{
+                font-size: 1.25vw;
+            }
+            
+        }
+    }
+
+    .like-post{
+        padding-bottom: 2%;
+        display: flex;
+
+        .user-like{
+            width: 50%;
+        }
+
+        .not-login-like-section{
+            width: 50%;
+        }
+
+        .user-like-list{
+            width: 50%;
+            justify-content: right;
+            align-items: end;
+            display: flex;
+            padding-right: 2%;
+        }
+    }
+
+    .post-description{
+        font-size: 1.2vw;
+        @media(max-width: 768px){
+            font-size: 1.4vw;
+        }
+    }
+}
+
+.error-message{
+    color: $error-message-color;
+    width: 70%;
+    padding: 1%;
+    text-align: center;
+}

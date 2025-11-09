@@ -1,0 +1,100 @@
+@import "../common files/variables";
+@import "../common files/mixinFiles";
+@import "leftComponent";
+@import "rightComponent";
+
+.register{
+    padding: 2%;
+    display: flex;
+    background-color: aquamarine;
+    @media(max-width: 600px){
+        flex-direction: column;
+    }
+
+    .register-left-side{
+        width: 40%;
+        @media(max-width: 768px){
+            width: 30%;
+        }
+        @media(max-width: 600px){
+            width: 100%;
+            margin-bottom: 5%;
+        }
+        @include leftComponent;
+    }
+
+    .register-right-side{
+        width: 60%;
+        @media(max-width: 768px){
+            width: 70%;
+        }
+        @media(max-width: 600px){
+            width: 100%;
+        }
+        @include right-component-login-register;
+
+        .register-mandatory-text{
+            & p{
+                color: blueviolet;
+                font-size: 1.5vw;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+        }
+
+        .form-container{
+            display: flex;
+
+            .form-left{
+                width: 50%;
+
+                .gender-name{
+                    font-size: 2vw;
+                    font-style: italic;
+                    color: rgb(95, 31, 155)
+                }
+            }
+
+            .form-right{
+                width: 50%;
+            }
+
+            .text{
+                font-size: 2vw;
+                padding: 0px;
+                text-align: center;
+                font-style: italic;
+                color: blueviolet;
+            }
+
+            .value{
+                @include valid-input-box;
+            }
+
+            .value-invalid{
+                @include invalid-input-box;
+            }
+        }
+
+        .register-button{
+            @include centre-div;
+        }
+
+        .error-message{
+            color: $error-message-color;
+            width: 100%;
+            padding: 1%;
+            text-align: center;
+        }
+        
+        .success-message{
+            color: $success-message-color;
+            width: 100%;
+            padding: 1%;
+            text-align: center;
+        }
+
+        .text-account{
+            @include login-register-link;
+        }
+    }
+}

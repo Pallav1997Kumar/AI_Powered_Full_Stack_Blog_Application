@@ -1,0 +1,8 @@
+@import "../common files/update-write-common";
+
+.update-blog{
+    @include update-write-styles;    
+    .edit-image{
+        display: inline;
+    }    
+}

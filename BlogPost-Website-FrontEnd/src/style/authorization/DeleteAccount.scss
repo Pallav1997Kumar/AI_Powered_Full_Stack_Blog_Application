@@ -1,0 +1,29 @@
+@import "leftComponent";
+@import "rightComponent";
+@import "../common files/mixinFiles";
+
+.delete-account{
+    padding: 2%;
+    display: flex;
+    background-color: aquamarine;
+    @media(max-width: 600px){
+        flex-direction: column;
+    }
+
+    .delete-account-left-side{
+        width: 60%;
+        @media(max-width: 600px){
+            width: 100%;
+            margin-bottom: 5%;
+        }
+        @include leftComponent;
+    }
+
+    .delete-account-right-side{
+        @include right-component-logout-delete;
+
+        .button-login-create{
+            padding: 4%;
+        }
+    }
+}
