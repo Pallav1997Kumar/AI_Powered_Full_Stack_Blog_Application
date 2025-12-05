@@ -1,0 +1,144 @@
+const UPDATE_BLOG_USERS_PROFILE_PHOTO = `
+    UPDATE BLOG_USERS
+    SET 
+        USER_PROFILE_PHOTO = ? 
+    WHERE USER_ID = ?
+`;
+
+
+const CHECK_BLOG_USERS_BASIC_DETAILS_UNCHANGED = `
+    SELECT * 
+    FROM BLOG_USERS    
+    WHERE USER_ID = ? 
+        AND FIRST_NAME = ? 
+        AND MIDDLE_NAME = ? 
+        AND LAST_NAME = ? 
+        AND FULL_NAME = ? 
+        AND GENDER = ? 
+        AND DATE_OF_BIRTH = ?
+`;
+
+
+const UPDATE_BLOG_USERS_BASIC_DETAILS = `
+    UPDATE BLOG_USERS
+    SET 
+        FIRST_NAME = ?, 
+        MIDDLE_NAME = ?, 
+        LAST_NAME = ?, 
+        FULL_NAME = ?, 
+        GENDER = ?, 
+        DATE_OF_BIRTH = ?
+    WHERE _ID = ?
+`;
+
+
+const CHECK_USERNAME_EMAIL_ADDRESS_EXISTS = `
+    SELECT * 
+    FROM BLOG_USERS 
+    WHERE USER_ID != ?
+        AND (USERNAME = ?
+        OR EMAIL_ADDRESS = ?)
+`;
+
+
+const CHECK_USERNAME_EXISTS = `
+    SELECT * 
+    FROM BLOG_USERS 
+    WHERE USER_ID != ?
+        AND USERNAME = ?
+`;
+
+
+
+const CHECK_EMAIL_ADDRESS_EXISTS = `
+    SELECT * 
+    FROM BLOG_USERS 
+    WHERE USER_ID != ?
+        AND EMAIL_ADDRESS = ?
+`
+
+
+const CHECK_USERNAME_EMAIL_UNCHANGED = `
+    SELECT 
+    USER_ID 
+    FROM BLOG_USERS
+    WHERE USER_ID = ?
+        AND USERNAME = ?
+        AND EMAIL_ADDRESS = ?
+`;
+
+
+const UPDATE_USERNAME_EMAIL = `
+    UPDATE BLOG_USERS
+    SET 
+        USERNAME = ?, 
+        EMAIL_ADDRESS = ?
+    WHERE USER_ID = ?
+`;
+
+
+const CHECK_USER_PASSWORD = `
+    SELECT * 
+    FROM BLOG_USERS
+    WHERE USER_ID = ?
+        AND PASSWORD = ?
+`;
+
+
+const UPDATE_USER_PASSWORD = `
+    UPDATE BLOG_USERS
+    SET PASSWORD = ?
+    WHERE USER_ID = ?
+`;
+
+
+const GET_USERS_DETAILS_BY_USER_IDS = `
+    SELECT 
+    USER_ID AS _id, 
+    FULL_NAME AS fullName, 
+    USERNAME AS username
+    FROM BLOG_USERS
+    WHERE USER_ID IN (?)
+`;
+
+
+const GET_USER_ID_BY_USERNAME = `
+    SELECT 
+    USER_ID 
+    FROM BLOG_USERS 
+    WHERE USERNAME = ?
+`;
+
+
+const GET_BLOG_USERS_JSON_ARRAY_FOR_SEARCH = `
+    SELECT JSON_ARRAYAGG(
+        JSON_OBJECT(
+            'type', 'Blog User',
+            '_id', u.USER_ID,
+            'username', u.USERNAME,
+            'fullName', u.FULL_NAME
+        )
+    ) AS results
+    FROM BLOG_USERS AS u
+    WHERE u.USER_ID IN (?) 
+    AND (u.USERNAME LIKE ? OR u.FULL_NAME LIKE ?)
+    LIMIT 5;
+`;
+
+
+
+module.exports = {
+    UPDATE_BLOG_USERS_PROFILE_PHOTO,
+    CHECK_BLOG_USERS_BASIC_DETAILS_UNCHANGED,
+    UPDATE_BLOG_USERS_BASIC_DETAILS,
+    CHECK_USERNAME_EMAIL_ADDRESS_EXISTS,
+    CHECK_USERNAME_EXISTS,
+    CHECK_EMAIL_ADDRESS_EXISTS,
+    CHECK_USERNAME_EMAIL_UNCHANGED,
+    UPDATE_USERNAME_EMAIL,
+    CHECK_USER_PASSWORD,
+    UPDATE_USER_PASSWORD,
+    GET_USERS_DETAILS_BY_USER_IDS,
+    GET_USER_ID_BY_USERNAME,
+    GET_BLOG_USERS_JSON_ARRAY_FOR_SEARCH
+}

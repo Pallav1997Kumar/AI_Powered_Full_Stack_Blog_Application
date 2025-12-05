@@ -1,0 +1,74 @@
+const EXISTING_USERNAME_OR_EMAIL_ADDRESS_CHECK = `
+    SELECT 
+        USERNAME as username, 
+        EMAIL_ADDRESS as emailAddress   
+    FROM BLOG_USERS 
+    WHERE USERNAME = ? 
+        OR EMAIL_ADDRESS = ?
+`;
+
+
+const EXISTING_USERNAME_CHECK = `
+    SELECT 
+    USERNAME as username
+    FROM BLOG_USERS 
+    WHERE USERNAME = ?
+`;
+
+
+const EXISTING_EMAIL_ADDRESS_CHECK = `
+    SELECT 
+    EMAIL_ADDRESS as emailAddress 
+    FROM BLOG_USERS 
+    WHERE EMAIL_ADDRESS = ?
+`;
+
+
+const INSERT_NEW_BLOG_USERS = `
+    INSERT INTO BLOG_USERS
+        (USER_ID, 
+        FIRST_NAME, 
+        MIDDLE_NAME, 
+        LAST_NAME, 
+        FULL_NAME, 
+        USERNAME, 
+        EMAIL_ADDRESS, 
+        GENDER, 
+        PASSWORD, 
+        DATE_OF_BIRTH, 
+        USER_PROFILE_PHOTO)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+`;
+
+
+const GET_USERS_BY_EMAIL_ADDRESS = `
+    SELECT * 
+    FROM BLOG_USERS 
+    WHERE EMAIL_ADDRESS = ?
+`;
+
+
+const GET_USERS_BY_EMAIL_ADDRESS_AND_PASSWORD = `
+    SELECT * 
+    FROM BLOG_USERS 
+    WHERE EMAIL_ADDRESS = ? 
+        AND PASSWORD = ?
+`;
+
+
+const DELETE_BLOG_USER_BY_ID = `
+    DELETE 
+    FROM BLOG_USERS 
+    WHERE USER_ID = ?
+`;
+
+
+module.exports = {
+    EXISTING_USERNAME_OR_EMAIL_ADDRESS_CHECK,
+    EXISTING_USERNAME_CHECK,
+    EXISTING_EMAIL_ADDRESS_CHECK,
+    INSERT_NEW_BLOG_USERS,
+    GET_USERS_BY_EMAIL_ADDRESS,
+    GET_USERS_BY_EMAIL_ADDRESS_AND_PASSWORD,
+    DELETE_BLOG_USER_BY_ID
+}

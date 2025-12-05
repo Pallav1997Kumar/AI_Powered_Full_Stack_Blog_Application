@@ -1,6 +1,7 @@
 # Node modules
 BlogPost-Website-FrontEnd/node_modules/
 Blogpost-with-MongoDB/node_modules/
+Blogpost-with-MySQL/node_modules/
 
 # Build output
 BlogPost-Website-FrontEnd/build/
@@ -8,6 +9,7 @@ BlogPost-Website-FrontEnd/build/
 # Environment variables
 Blogpost-with-MongoDB/config.env
 BlogPost-Website-FrontEnd/.env
+Blogpost-with-MySQL/config.env
 
 # Logs
 *.log
